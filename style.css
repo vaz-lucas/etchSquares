@@ -2,6 +2,7 @@
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
+    justify-content: center;
 }
 
 .gridDiv {
@@ -9,8 +10,8 @@
     padding: 10px;
     background-color: rgb(207 232 220);
     border: 2px solid rgb(79 185 227);
-    width: 150px;
-    height: 150px;
+    width: 100px;
+    height: 100px;
     transition: 0.5s 0.5s;
 }
 
@@ -18,4 +19,14 @@
     color: green;
     background-color: yellow;
     transition: all 0.5s;
+}
+
+#btnPanel {
+    display: flex;
+
+    justify-content: center;
+    button {
+        padding: 20px;
+        margin: 20px;
+    }
 }
