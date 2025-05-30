@@ -17,7 +17,7 @@
 
 .gridDiv:hover {
     color: green;
-    background-color: yellow;
+    background-color: yellow !important;
     transition: all 0.5s;
 }
 
