@@ -36,17 +36,29 @@ function changeSquareSize() {
     return;
   }
 
-  let rgbR = Math.ceil(Math.random() * 255);
-  let rgbG = Math.ceil(Math.random() * 255);
-  let rgbB = Math.ceil(Math.random() * 255);
-  // let i = 1;
+  let rgbR = Math.floor(Math.random() * 256);
+  let rgbG = Math.floor(Math.random() * 256);
+  let rgbB = Math.floor(Math.random() * 256);
+
+  updateSquare();
   squares.forEach((square) => {
     square.style.height = `${sizeNum}px`;
     square.style.width = `${sizeNum}px`;
     square.style.backgroundColor = `rgb(${rgbR} ${rgbG} ${rgbB})`;
-    // square.style.opacity = i / 10;
+    square.style.opacity = 0.1;
   });
 }
+function updateSquare() {
+  function eventT() {
+    console.log("testing log");
+    square.style.opacity += 0.1;
+  }
+
+  squares.forEach((square) => {
+    square.removeEventListener("mouseover", eventT);
+    square.addEventListener("mouseover", eventT);
+  });
+}
+
 createGrid();
 sizeBtn.addEventListener("click", changeSquareSize);
-// square.addEventListener("hover", () => i++);
